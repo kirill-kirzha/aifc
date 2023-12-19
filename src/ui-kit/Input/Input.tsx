@@ -2,7 +2,7 @@ import { InputGroup, InputWrapper, InputContent } from "./Input.styles";
 import {ChangeEvent, useRef} from "react";
 import {useSetFocusInsideInput} from "../../hooks/useSetFocusInsideInput";
 
-export type IInputTypes = 'primary' | 'otp'
+export type IInputTypes = 'primary' | 'inline'
 
 export interface IInputProps {
     variant: IInputTypes

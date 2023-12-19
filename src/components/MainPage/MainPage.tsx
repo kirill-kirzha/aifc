@@ -22,6 +22,7 @@ import {Footer} from "../Footer/Footer";
 
 export const MainPage = () => {
     const navigate = useNavigate()
+    const username = localStorage.getItem('USER_NAME')
 
     const goToAuthorize = () => {
         navigate('/authorization')
@@ -45,8 +46,7 @@ export const MainPage = () => {
                 </MainPageHeader>
                 <UserInfo>
                     <UserName>
-                        {/*{userName}*/}
-                        Ашот Каренович,
+                        {username},
                     </UserName>
                     <MainPageTypography>готовы покорять новые вершины с ИИ?</MainPageTypography>
                 </UserInfo>

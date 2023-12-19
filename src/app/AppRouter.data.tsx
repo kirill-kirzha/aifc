@@ -11,7 +11,11 @@ export const AuthorizedRoutes: IRoute[] = [
   {
     path: ERoutes.APPOINTMENT,
     element: <AppointmentPage />,
-  }
+  },
+  {
+    path: ERoutes.AUTHORIZATION,
+    element: <AuthorizationPage />,
+  },
 ];
 
 export const UnauthorizedRoutes: IRoute[] = [

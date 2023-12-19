@@ -29,13 +29,15 @@ ${({ variant }) => {
     switch (variant) {
         case 'primary':
             return css`
-              color: var(--color-action);
-              background: transparent;
+              color: var(--color-text);
+              background: var(--color-primary);
               border: 1px solid transparent;
               border-radius: ${rem(25)};
               
               &:hover {
-                border: 1px solid var(--color-action)
+                background: transparent;
+                border: 1px solid var(--color-primary);
+                color: var(--color-primary)
               }
           `
         case 'filled':
