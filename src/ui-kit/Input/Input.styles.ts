@@ -21,9 +21,10 @@ export const InputGroup = styled.div<IInputProps>`
     switch(variant) {
         case 'primary':
             return css`
-              background: transparent;
-              color: var(--color-text);
-              border-bottom: var(--color-bg) solid 1px;
+              background: var(--color-third);
+              border-radius: ${rem(20)};
+              color: var(--color-primary);
+              //border-bottom: var(--color-bg) solid 1px;
             `
           case 'otp':
             return css`
