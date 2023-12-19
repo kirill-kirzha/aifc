@@ -20,7 +20,7 @@ export const AuthorizedRoutes: IRoute[] = [
 
 export const UnauthorizedRoutes: IRoute[] = [
   {
-    path: ERoutes.AUTHORIZATION,
+    path: ERoutes.MAIN,
     element: <AuthorizationPage />,
   },
 ];

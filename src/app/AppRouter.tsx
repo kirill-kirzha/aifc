@@ -3,7 +3,7 @@ import { AuthorizedRoutes, UnauthorizedRoutes } from "./AppRouter.data";
 import { Route, Routes } from "react-router-dom";
 
 export const AppRouter = () => {
-  const userToken = localStorage.getItem("token");
+  const userToken = localStorage.getItem("USER_NAME");
 
   return userToken ? (
     <Suspense fallback={<div>Loading...</div>}>
