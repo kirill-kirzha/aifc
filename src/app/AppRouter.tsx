@@ -1,11 +1,15 @@
 import { Fragment, Suspense } from "react";
 import { AuthorizedRoutes, UnauthorizedRoutes } from "./AppRouter.data";
 import { Route, Routes } from "react-router-dom";
+import {useAppSelector} from "../hooks/useAppSelector";
 
 export const AppRouter = () => {
   const userToken = localStorage.getItem("USER_NAME");
+  const wasAuthorized = !!useAppSelector((state) => state.user.userName);
 
-  return userToken ? (
+  const isAuthorized = userToken || wasAuthorized
+
+  return isAuthorized ? (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         {AuthorizedRoutes.map(({ element, path, layout }) => {

@@ -1,43 +1,27 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
-export type TClubVariants = 'Бутово' | 'Чехов' | 'Подольск'
-
 type User = {
     userName: string
-    name: string
-    lastName: string
-    phone: string
-    club: string
+    company: string
+    password: string
 }
 
 const initialState: User = {
     userName: '',
-    name: '',
-    lastName: '',
-    phone: '',
-    club: 'Чехов'
+    company: '',
+    password: ''
 }
 
 const userSlice = createSlice({
-    name: 'schedule',
+    name: 'user',
     initialState: initialState,
     reducers: {
-        registerUser(state, action: PayloadAction<Pick<User, 'phone' | 'club'>>) {
-            state.phone = action.payload.phone
-            state.club = action.payload.club
+        setUserName(state, action: PayloadAction<string>) {
+            state.userName = action.payload
         },
-        authorizeUser(state, action: PayloadAction<Pick<User, 'phone'>>) {
-            state.phone = action.payload.phone
-        },
-        setUserName(state, action: PayloadAction<Pick<User, 'userName'>>) {
-            state.userName = action.payload.userName
-        },
-        logout(state) {
-            state.phone = ''
-        }
     },
 });
 
-export const { authorizeUser, registerUser, setUserName, logout } = userSlice.actions;
+export const { setUserName } = userSlice.actions;
 
 export default userSlice.reducer;

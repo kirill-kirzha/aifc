@@ -3,12 +3,14 @@ import {AuthorizationLayout, AuthorizationForm, LogoText, AuthorizationTypograph
 import {Button} from "../../ui-kit/Button";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import {useAppDispatch} from "../../hooks/useAppDispatch";
+import {setUserName} from "../../app/store/userSlice";
 
 //@ts-ignore
 const tg = window.Telegram.WebApp;
 
 export const AuthorizationPage = () => {
-    const navigate = useNavigate()
+    const dispatch = useAppDispatch()
     const [company, setCompany] = useState<string>()
     const [user, setUser] = useState<string>()
     const [password, setPassword] = useState<string>()
@@ -20,7 +22,7 @@ export const AuthorizationPage = () => {
             localStorage.setItem('USER_COMPANY', company)
             localStorage.setItem('USER_NAME', user)
             localStorage.setItem('USER_PASSWORD', password)
-            window.location.reload()
+            dispatch(setUserName(user))
         } else {
             tg.showAlert('Пожалуйста, заполните все данные')
         }
