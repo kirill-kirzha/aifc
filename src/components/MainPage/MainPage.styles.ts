@@ -108,3 +108,5 @@ export const MenuTypography = styled.p`
   font-weight: 700;
   color: var(--color-text);
 `
+
+export const smth = styled.div``
