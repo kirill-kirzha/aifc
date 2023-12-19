@@ -1,7 +1,5 @@
 import './styles/App.scss';
-import {Provider} from "react-redux";
 import {AppRouter} from "./AppRouter";
-import store from "./store";
 
 function App() {
   return (
