@@ -2,7 +2,6 @@ import {Input} from "../../ui-kit/Input";
 import {AuthorizationLayout, AuthorizationForm, LogoText, AuthorizationTypography} from "./AuthorizationPage.styles";
 import {Button} from "../../ui-kit/Button";
 import {useState} from "react";
-import {useNavigate} from "react-router-dom";
 import {useAppDispatch} from "../../hooks/useAppDispatch";
 import {setUserName} from "../../app/store/userSlice";
 
