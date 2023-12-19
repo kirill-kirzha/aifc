@@ -20,7 +20,7 @@ export const AuthorizationPage = () => {
             localStorage.setItem('USER_COMPANY', company)
             localStorage.setItem('USER_NAME', user)
             localStorage.setItem('USER_PASSWORD', password)
-            navigate('/')
+            window.location.reload()
         } else {
             tg.showAlert('Пожалуйста, заполните все данные')
         }
