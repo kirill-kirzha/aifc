@@ -24,10 +24,6 @@ export const MainPage = () => {
     const navigate = useNavigate()
     const username = localStorage.getItem('USER_NAME')
 
-    const goToAuthorize = () => {
-        navigate('/authorization')
-    }
-
     const goToAppointment = () => {
         navigate('/appointment')
     }

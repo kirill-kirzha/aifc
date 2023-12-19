@@ -23,6 +23,6 @@ export const useSetFocusInsideInput = (ref: any) => {
             inputElement.removeEventListener('click', handleClickInside)
             inputElement.removeEventListener('click', handleClickOutside)
         }
-    }, [])
+    }, [ref])
     return isFocused
 }
