@@ -17,7 +17,7 @@ export const FadeAnimation = ({
 }: PropsWithChildren<IProps>) => {
   return (
     <Transition
-      style={fullWidth ? { width: "100%", height: "100%" } : null}
+      style={fullWidth ? { width: "100%", height: "100%" } : undefined}
       className={className}
       key={animationKey}
       as={"div"}
