@@ -18,6 +18,7 @@ import Action1 from './action1.png'
 import Action2 from './action2.png'
 import Action3 from './action3.png'
 import {MainPageAction} from "./MainPageAction";
+import {Footer} from "../Footer/Footer";
 
 export const MainPage = () => {
     const navigate = useNavigate()
@@ -66,6 +67,7 @@ export const MainPage = () => {
                     <MenuTypography>Подписка</MenuTypography>
                 </MainPageSection>
             </MainPageContent>
+            <Footer />
         </MainPageLayout>
     );
 };

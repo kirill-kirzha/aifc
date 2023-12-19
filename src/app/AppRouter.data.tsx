@@ -1,5 +1,5 @@
 import {ERoutes, IRoute} from "./AppRouter.types";
-import {AuthorizationPage} from "../components/Authorizationpage/AuthorizationPage";
+import {AuthorizationPage} from "../components/AuthorizationPage/AuthorizationPage";
 import {MainPage} from "../components/MainPage/MainPage";
 import {AppointmentPage} from "../components/AppointmentPage/AppointmentPage";
 
