@@ -1,6 +1,6 @@
 import styled, {css} from "styled-components";
 import {IInputProps} from "./Input";
-import {rem} from "../../app/styles";
+import {rem} from "../../app/styles/styles";
 
 export const InputWrapper = styled.div`
     display: flex;

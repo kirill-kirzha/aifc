@@ -20,7 +20,9 @@ export const Input = ({ variant, placeholder, onChange, maskEvent, className }: 
     const isFocused = useSetFocusInsideInput(inputRef)
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        onChange(e)
+        if (onChange) {
+            onChange(e)
+        }
         if(maskEvent) {
             maskEvent(e)
         }
