@@ -4,30 +4,27 @@ export interface ISphere {
 
 export const dropdownData: ISphere[] = [
     {
-        title: 'Логистика'
+        title: 'Образование'
     },
     {
-        title: 'Маркетинг'
-    },
-    {
-        title: 'Строительство'
-    },
-    {
-        title: 'Логистика'
-    },
-    {
-        title: 'Маркетинг'
+        title: 'Организация мероприятий'
     },
     {
         title: 'Строительство'
     },
     {
+        title: 'Маркетинг и PR'
+    },
+    {
+        title: 'Технологии'
+    },
+    {
+        title: 'Финансы и банки'
+    },
+    {
         title: 'Логистика'
     },
     {
-        title: 'Маркетинг'
-    },
-    {
-        title: 'Строительство'
+        title: 'Медицина'
     }
 ]

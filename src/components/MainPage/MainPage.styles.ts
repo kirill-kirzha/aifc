@@ -108,3 +108,51 @@ export const MenuTypography = styled.p`
   font-weight: 700;
   color: var(--color-text);
 `
+
+export const ProjectCard = styled.div`
+  background: var(--color-action);
+  color: #fff;
+  display: flex;
+  border-radius: ${rem(25)};
+  padding: ${rem(10)};
+  align-items: center;
+  gap: ${rem(15)}
+`
+
+export const ProjectCardLeft = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${rem(5)};
+  align-items: center;
+`
+
+export const ProjectTitle = styled.p`
+  font-size: 14px;
+  font-weight: 700;
+`
+
+export const ProjectAvatar = styled.div`
+  display: flex;
+  background: var(--color-bg);
+  border: 1px solid #fff;
+  border-radius: ${rem(20)};
+  img {
+    width: ${rem(65)};
+    height: ${rem(60)}
+  }
+`
+
+export const ProjectCardRight = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${rem(5)};
+`
+
+export const ProjectCardActions = styled.div`
+  color: var(--color-third);
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 700;
+  gap: ${rem(5)};
+`

@@ -33,6 +33,9 @@ import { ReactComponent as InstIcon } from './inst.svg'
 import { ReactComponent as TgIcon } from './telegram.svg'
 import {useNavigate} from "react-router-dom";
 
+// @ts-ignore
+const tg = window.Telegram.WebApp
+
 export interface IAppointmentItem {
     time: string
 }
@@ -57,6 +60,10 @@ export const AppointmentPage = () => {
 
     const handleGetBack = () => {
         navigate(-1)
+    }
+
+    const handleMakeAppointment = () => {
+        tg.showAlert('Вы успешно записались на консультацию!')
     }
 
     return (
@@ -116,7 +123,7 @@ export const AppointmentPage = () => {
             </StaffMember>
             <AppointmentActions>
                 <Button variant={'primary-reverted'} onClick={handleGetBack}>Отменить</Button>
-                <Button variant={'primary'}>Записаться</Button>
+                <Button variant={'primary'} onClick={handleMakeAppointment}>Записаться</Button>
             </AppointmentActions>
         </AppointmentLayout>
         </LocalizationProvider>

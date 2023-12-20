@@ -9,7 +9,13 @@ import {
     MainPageContent,
     MainPageSection,
     MenuTypography,
-    MainPageInfo
+    MainPageInfo,
+    ProjectCard,
+    ProjectAvatar,
+    ProjectCardActions,
+    ProjectCardLeft,
+    ProjectCardRight,
+    ProjectTitle,
 } from "./MainPage.styles";
 import {useNavigate} from "react-router-dom";
 import {Input} from "../../ui-kit/Input";
@@ -19,11 +25,12 @@ import Action2 from './action2.png'
 import Action3 from './action3.png'
 import {MainPageAction} from "./MainPageAction";
 import {Footer} from "../Footer/Footer";
+import ProjectIcon from './project.png'
 
 export const MainPage = () => {
     const navigate = useNavigate()
     const username = localStorage.getItem('USER_NAME')
-
+    const companyName = localStorage.getItem('USER_COMPANY')
     const goToAppointment = () => {
         navigate('/appointment')
     }
@@ -55,6 +62,24 @@ export const MainPage = () => {
             <MainPageContent>
                 <MainPageSection>
                     <MenuTypography>Ваши проекты</MenuTypography>
+                    <ProjectCard>
+                        <ProjectCardLeft>
+                            <ProjectTitle>
+                                {companyName}
+                            </ProjectTitle>
+                            <ProjectAvatar>
+                                <img src={ProjectIcon} alt={'проект'} />
+                            </ProjectAvatar>
+                        </ProjectCardLeft>
+                        <ProjectCardRight>
+                            <p>Действующий тариф: -</p>
+                            <p>Баланс: -</p>
+                            <ProjectCardActions>
+                                <p>Пополнить баланс</p>
+                                <p>Редактировать</p>
+                            </ProjectCardActions>
+                        </ProjectCardRight>
+                    </ProjectCard>
                 </MainPageSection>
                 <MainPageSection>
                     <MenuTypography>Расписание</MenuTypography>
