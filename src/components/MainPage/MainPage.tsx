@@ -28,7 +28,6 @@ import {MainPageAction} from "./MainPageAction";
 import {Footer} from "../Footer/Footer";
 import ProjectIcon from './project.png'
 import {Button} from "../../ui-kit/Button";
-import {useAppDispatch} from "../../hooks/useAppDispatch";
 
 export const MainPage = () => {
     const navigate = useNavigate()
