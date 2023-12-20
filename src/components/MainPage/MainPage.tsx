@@ -32,7 +32,6 @@ import {useAppDispatch} from "../../hooks/useAppDispatch";
 
 export const MainPage = () => {
     const navigate = useNavigate()
-    const dispatch = useAppDispatch()
     const username = localStorage.getItem('USER_NAME')
     const companyName = localStorage.getItem('USER_COMPANY')
     const goToAppointment = () => {
