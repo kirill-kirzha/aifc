@@ -47,7 +47,7 @@ export const AppointmentPage = () => {
         setSelectedTime(time)
     }
 
-    const handleSelectDate = (date: object) => {
+    const handleSelectDate = (date: any) => {
         const strDate = date.toString()
         const selected = new Date(strDate)
 
