@@ -65,14 +65,14 @@ ${({ variant }) => {
           `
         case 'cancel-primary':
             return css`
-            color: var(--color-cancel);
+            color: var(--color-warning);
             background: transparent;
-            border: 1px solid var(--color-cancel);
+            border: 1px solid var(--color-warning);
             border-radius: ${rem(25)};
             
             &:hover {
-              color: var(--color-text-dark);
-              background: var(--color-cancel);
+              color: var(--color-text);
+              background: var(--color-warning);
               border: 1px solid transparent;
             }
           `

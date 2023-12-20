@@ -8,6 +8,11 @@ interface IActionBackground {
 export const MainPageLayout = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 20%;
+  
+  Button {
+    margin: 0 5% 0 5%;
+  }
 `
 
 export const MainPageInfo = styled.div`
@@ -101,6 +106,7 @@ export const MainPageContent = styled.div`
 export const MainPageSection = styled.div`
   display: flex;
   flex-direction: column;
+  gap: ${rem(15)};
 `
 
 export const MenuTypography = styled.p`
@@ -155,4 +161,10 @@ export const ProjectCardActions = styled.div`
   font-size: 14px;
   font-weight: 700;
   gap: ${rem(5)};
+`
+
+export const MenuWarning = styled.p`
+  color: var(--color-third);
+  text-align: center;
+  margin: ${rem(25)};
 `

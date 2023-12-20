@@ -16,6 +16,7 @@ import {
     ProjectCardLeft,
     ProjectCardRight,
     ProjectTitle,
+    MenuWarning
 } from "./MainPage.styles";
 import {useNavigate} from "react-router-dom";
 import {Input} from "../../ui-kit/Input";
@@ -26,13 +27,20 @@ import Action3 from './action3.png'
 import {MainPageAction} from "./MainPageAction";
 import {Footer} from "../Footer/Footer";
 import ProjectIcon from './project.png'
+import {Button} from "../../ui-kit/Button";
+import {useAppDispatch} from "../../hooks/useAppDispatch";
 
 export const MainPage = () => {
     const navigate = useNavigate()
+    const dispatch = useAppDispatch()
     const username = localStorage.getItem('USER_NAME')
     const companyName = localStorage.getItem('USER_COMPANY')
     const goToAppointment = () => {
         navigate('/appointment')
+    }
+
+    const handleLogOut = () => {
+        navigate('/authorization')
     }
 
     return (
@@ -83,12 +91,15 @@ export const MainPage = () => {
                 </MainPageSection>
                 <MainPageSection>
                     <MenuTypography>Расписание</MenuTypography>
+                    <MenuWarning>Расписание пока отсутствует😢</MenuWarning>
                 </MainPageSection>
                 <MainPageSection>
                     <MenuTypography>Подписка</MenuTypography>
+                    <MenuWarning>Подписка пока отсутствует😢</MenuWarning>
                 </MainPageSection>
             </MainPageContent>
             <Footer />
+            <Button variant={'cancel-primary'} onClick={handleLogOut}>Выйти из аккаунта</Button>
         </MainPageLayout>
     );
 };
