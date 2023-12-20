@@ -11,13 +11,16 @@ import {
     StyledDatePicker,
     TimeSelectorDesc,
     TimeSelectorLegend,
-    TimeSelectorSelected
+    TimeSelectorSelected,
+    FormTitle,
+    AppointmentForm
 } from './AppointmentPage.styles'
 import {appointmentData} from "./AppointmentPage.data";
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import {useState} from "react";
 import {getMonthByNumber} from "../../utils/GetMonthByNumber";
+import {Dropdown} from "../Dropdown/Dropdown";
 
 export interface IAppointmentItem {
     time: string
@@ -39,8 +42,6 @@ export const AppointmentPage = () => {
         setSelectedDate(selected.getDate())
         setSelectedMonth(selected.getMonth())
     }
-
-    console.log(selectedDate, selectedMonth)
 
     return (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -67,15 +68,19 @@ export const AppointmentPage = () => {
                             слот занят
                         </TimeSelectorLegend>
                         <TimeSelectorSelected>
-                            вы выбрали: {selectedDate} {getMonthByNumber(Number(selectedMonth))}, {selectedTime}
+                            {selectedDate && selectedMonth ?
+                                `вы выбрали: ${selectedDate} ${getMonthByNumber(Number(selectedMonth))}, ${selectedTime}`
+                                : 'время не выбрано'
+                            }
                         </TimeSelectorSelected>
                     </TimeSelectorDesc>
                 </TimeSelectorWrapper>
             </AppointmentCalendarWrapper>
-            {/*<AppointmentForm>*/}
-            {/*    <FormTitle>Выберите сферу работы вашего проекта</FormTitle>*/}
-            {/*    <FormTitle>Расскажите немного о вашем проекте</FormTitle>*/}
-            {/*</AppointmentForm>*/}
+            <AppointmentForm>
+                <FormTitle>Выберите сферу работы вашего проекта</FormTitle>
+                <Dropdown />
+                <FormTitle>Расскажите немного о вашем проекте</FormTitle>
+            </AppointmentForm>
             {/*<StaffMember>*/}
             {/*    <StaffMemberTitle>Специалист</StaffMemberTitle>*/}
             {/*    <StaffMemberCard>*/}

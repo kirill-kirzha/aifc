@@ -103,3 +103,15 @@ export const TimeSelectorSelected = styled.p`
   font-size: 12px;
   font-weight: 700;
 `
+
+export const AppointmentForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${rem(10)};
+`
+
+export const FormTitle = styled.p`
+  color: var(--color-bg);
+  font-size: 14px;
+  font-weight: 700;
+`
