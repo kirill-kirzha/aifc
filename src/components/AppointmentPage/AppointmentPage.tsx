@@ -102,7 +102,7 @@ export const AppointmentPage = () => {
                 <StaffMemberTitle>Специалист</StaffMemberTitle>
                 <StaffMemberCard>
                     <StaffMemberIcon>
-                        <img src={AvatarIcon} />
+                        <img src={AvatarIcon} alt={'специалист'}/>
                     </StaffMemberIcon>
                     <StaffMemberCreds>
                         <p>Олег Логинов</p>
