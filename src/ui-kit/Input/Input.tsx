@@ -12,9 +12,10 @@ export interface IInputProps {
     onChange?: (e: ChangeEvent<HTMLInputElement>) => void
     maskEvent?: (e: ChangeEvent<HTMLInputElement>) => void
     onClick?: () => void
+    value?: string
 }
 
-export const Input = ({ variant, placeholder, onChange, maskEvent, className, onClick }: IInputProps & Partial<HTMLInputElement>) => {
+export const Input = ({ variant, placeholder, onChange, maskEvent, className, onClick, value }: IInputProps & Partial<HTMLInputElement>) => {
 
     const inputRef = useRef(null)
 
@@ -35,6 +36,7 @@ export const Input = ({ variant, placeholder, onChange, maskEvent, className, on
                 <InputContent
                     ref={inputRef}
                     placeholder={placeholder}
+                    value={value}
                 />
             </InputGroup>
         </InputWrapper>

@@ -6,14 +6,11 @@ import {Transition} from "@headlessui/react";
 
 export const Dropdown = () => {
     const [searchValue, setSearchValue] = useState<string>('')
-    const [selectedOptions, setSelectedOption] = useState<string[]>([])
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
     const handleSelectOption = (option: string) => {
-        if(selectedOptions.includes(option)) {
-            const filteredOptions = selectedOptions.filter(opt => opt !== option)
-            setSelectedOption(filteredOptions)
-        } else setSelectedOption([...selectedOptions, option])
+        setSearchValue(option)
+        setIsOpen(false)
     }
 
     const toggleDropdown = () => {
@@ -34,6 +31,7 @@ export const Dropdown = () => {
                 placeholder={'Выберите сферу работы вашего проекта'}
                 onChange={handleSearch}
                 onClick={toggleDropdown}
+                value={searchValue}
             />
             <DropdownContent>
             <Transition
