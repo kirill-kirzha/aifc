@@ -50,17 +50,17 @@ ${({ variant }) => {
               background: var(--color-inactive);
             }
           `
-        case 'cancel-secondary':
+        case 'primary-reverted':
             return css`
-            color: var(--color-text-dark);
-            background: var(--color-warning);
-            border: solid 1px transparent;
+              background: transparent;
+              border: 1px solid var(--color-primary);
+              color: var(--color-primary);
               border-radius: ${rem(25)};
             
             &:hover {
-              color: var(--color-warning);
-              background: transparent;
-              border: solid 1px var(--color-warning);
+              color: var(--color-text);
+              background: var(--color-primary);
+              border: 1px solid transparent;
             }
           `
         case 'cancel-primary':

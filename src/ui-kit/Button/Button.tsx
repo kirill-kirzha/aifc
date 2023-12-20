@@ -1,7 +1,7 @@
 import {PropsWithChildren} from "react";
 import {ButtonWrapper} from "./Button.styles";
 
-export type IButtonVariants = 'primary' | 'filled' | 'disabled' | 'cancel-primary' | 'cancel-secondary'
+export type IButtonVariants = 'primary' | 'filled' | 'prima' | 'cancel-primary' | 'cancel-secondary' | 'primary-reverted'
 
 export interface IButtonProps {
     variant: IButtonVariants

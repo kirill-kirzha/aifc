@@ -13,7 +13,14 @@ import {
     TimeSelectorLegend,
     TimeSelectorSelected,
     FormTitle,
-    AppointmentForm
+    AppointmentForm,
+    StyledTextArea,
+    StaffMember,
+    StaffMemberCard,
+    StaffMemberIcon,
+    StaffMemberTitle,
+    StaffMemberContacts,
+    StaffMemberCreds
 } from './AppointmentPage.styles'
 import {appointmentData} from "./AppointmentPage.data";
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -21,6 +28,10 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import {useState} from "react";
 import {getMonthByNumber} from "../../utils/GetMonthByNumber";
 import {Dropdown} from "../Dropdown/Dropdown";
+import AvatarIcon from './avatar.png'
+import { ReactComponent as InstIcon } from './inst.svg'
+import { ReactComponent as TgIcon } from './telegram.svg'
+import {useNavigate} from "react-router-dom";
 
 export interface IAppointmentItem {
     time: string
@@ -30,6 +41,7 @@ export const AppointmentPage = () => {
     const [selectedTime, setSelectedTime] = useState<string>('')
     const [selectedDate, setSelectedDate] = useState<number>()
     const [selectedMonth, setSelectedMonth] = useState<number>()
+    const navigate = useNavigate()
 
     const handleSelectTime = (time: string) => {
         setSelectedTime(time)
@@ -41,6 +53,10 @@ export const AppointmentPage = () => {
 
         setSelectedDate(selected.getDate())
         setSelectedMonth(selected.getMonth())
+    }
+
+    const handleGetBack = () => {
+        navigate(-1)
     }
 
     return (
@@ -68,7 +84,7 @@ export const AppointmentPage = () => {
                             слот занят
                         </TimeSelectorLegend>
                         <TimeSelectorSelected>
-                            {selectedDate && selectedMonth ?
+                            {selectedDate || selectedMonth ?
                                 `вы выбрали: ${selectedDate} ${getMonthByNumber(Number(selectedMonth))}, ${selectedTime}`
                                 : 'время не выбрано'
                             }
@@ -80,25 +96,26 @@ export const AppointmentPage = () => {
                 <FormTitle>Выберите сферу работы вашего проекта</FormTitle>
                 <Dropdown />
                 <FormTitle>Расскажите немного о вашем проекте</FormTitle>
+                <StyledTextArea placeholder={'Добавить комментарий...'} />
             </AppointmentForm>
-            {/*<StaffMember>*/}
-            {/*    <StaffMemberTitle>Специалист</StaffMemberTitle>*/}
-            {/*    <StaffMemberCard>*/}
-            {/*        <StaffMemberIcon>*/}
-            {/*            <icon />*/}
-            {/*        </StaffMemberIcon>*/}
-            {/*        <StaffMemberCreds>*/}
-            {/*            <p>Олег Логинов</p>*/}
-            {/*            <p>Консультант AIFC</p>*/}
-            {/*        </StaffMemberCreds>*/}
-            {/*        <StaffMemberContacts>*/}
-            {/*            <icon />*/}
-            {/*            <icon />*/}
-            {/*        </StaffMemberContacts>*/}
-            {/*    </StaffMemberCard>*/}
-            {/*</StaffMember>*/}
+            <StaffMember>
+                <StaffMemberTitle>Специалист</StaffMemberTitle>
+                <StaffMemberCard>
+                    <StaffMemberIcon>
+                        <img src={AvatarIcon} />
+                    </StaffMemberIcon>
+                    <StaffMemberCreds>
+                        <p>Олег Логинов</p>
+                        <p>Консультант AIFC</p>
+                    </StaffMemberCreds>
+                    <StaffMemberContacts>
+                        <InstIcon />
+                        <TgIcon />
+                    </StaffMemberContacts>
+                </StaffMemberCard>
+            </StaffMember>
             <AppointmentActions>
-                <Button variant={'primary'}>Отменить</Button>
+                <Button variant={'primary-reverted'} onClick={handleGetBack}>Отменить</Button>
                 <Button variant={'primary'}>Записаться</Button>
             </AppointmentActions>
         </AppointmentLayout>

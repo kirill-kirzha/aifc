@@ -107,11 +107,70 @@ export const TimeSelectorSelected = styled.p`
 export const AppointmentForm = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${rem(10)};
+  gap: ${rem(20)};
 `
 
 export const FormTitle = styled.p`
   color: var(--color-bg);
   font-size: 14px;
   font-weight: 700;
+`
+
+export const StyledTextArea = styled.textarea`
+  display: flex;
+  width: 100%;
+  min-height: ${rem(200)};
+  background: var(--color-third);
+  color: var(--color-primary);
+  border-radius: ${rem(20)};
+  padding: ${rem(15)}
+`
+
+export const StaffMember = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${rem(15)};
+`
+
+export const StaffMemberTitle = styled.p`
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 700;
+`
+
+export const StaffMemberCard = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+export const StaffMemberIcon = styled.div`
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`
+
+export const StaffMemberCreds = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${rem(10)};
+  color: var(--color-third);
+  font-size: 12px;
+  font-weight: 400;
+  padding-left: 10%;
+  
+  p {
+    &:first-child {
+      color: var(--color-primary);
+        font-size: 16px;
+        font-weight: 700;
+    }
+  }
+`
+
+export const StaffMemberContacts = styled.div`
+  display: flex;
+  gap: ${rem(15)};
+  align-items: center;
+  padding-left: 30%;
 `
