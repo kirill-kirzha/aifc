@@ -1,5 +1,5 @@
 import {Button} from "../../ui-kit/Button";
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import {ReactComponent as LegendIcon} from './legend.svg'
 import {
     AppointmentCalendarWrapper,
     AppointmentLayout,
@@ -8,12 +8,16 @@ import {
     TimeSelectorWrapper,
     TimeSelectorDate,
     AppointmentActions,
-    StyledDatePicker
+    StyledDatePicker,
+    TimeSelectorDesc,
+    TimeSelectorLegend,
+    TimeSelectorSelected
 } from './AppointmentPage.styles'
 import {appointmentData} from "./AppointmentPage.data";
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import {useState} from "react";
+import {getMonthByNumber} from "../../utils/GetMonthByNumber";
 
 export interface IAppointmentItem {
     time: string
@@ -21,17 +25,22 @@ export interface IAppointmentItem {
 
 export const AppointmentPage = () => {
     const [selectedTime, setSelectedTime] = useState<string>('')
-    const [selectedDate, setSelectedDate] = useState<string>('')
+    const [selectedDate, setSelectedDate] = useState<number>()
+    const [selectedMonth, setSelectedMonth] = useState<number>()
 
     const handleSelectTime = (time: string) => {
         setSelectedTime(time)
     }
 
-    const handleSelectDate = (date: string) => {
-        setSelectedDate(date)
+    const handleSelectDate = (date: object) => {
+        const strDate = date.toString()
+        const selected = new Date(strDate)
+
+        setSelectedDate(selected.getDate())
+        setSelectedMonth(selected.getMonth())
     }
 
-    console.log(selectedDate)
+    console.log(selectedDate, selectedMonth)
 
     return (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -52,10 +61,15 @@ export const AppointmentPage = () => {
                             </TimeSelectorDate>
                         ))}
                     </TimeSelectorDates>
-                    {/*<TimeSelectorDesc>*/}
-                    {/*    <TimeSelectorLegend></TimeSelectorLegend>*/}
-                    {/*    <TimeSelectorSelected></TimeSelectorSelected>*/}
-                    {/*</TimeSelectorDesc>*/}
+                    <TimeSelectorDesc>
+                        <TimeSelectorLegend>
+                            <LegendIcon />
+                            слот занят
+                        </TimeSelectorLegend>
+                        <TimeSelectorSelected>
+                            вы выбрали: {selectedDate} {getMonthByNumber(Number(selectedMonth))}, {selectedTime}
+                        </TimeSelectorSelected>
+                    </TimeSelectorDesc>
                 </TimeSelectorWrapper>
             </AppointmentCalendarWrapper>
             {/*<AppointmentForm>*/}

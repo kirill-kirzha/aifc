@@ -77,5 +77,29 @@ export const StyledDatePicker = styled(DatePicker).attrs({
   border-radius: ${rem(20)};
   border: 1px solid black;
   color: #fff;
-  //background: black;
+`
+
+export const TimeSelectorDesc = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+export const TimeSelectorLegend = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${rem(8)};
+  color: var(--color-third);
+  font-size: 12px;
+  font-weight: 700;
+  
+  svg {
+    width: ${rem(14)};
+    height: ${rem(14)};
+  }
+`
+
+export const TimeSelectorSelected = styled.p`
+  color: var(--color-bg);
+  font-size: 12px;
+  font-weight: 700;
 `
