@@ -64,6 +64,7 @@ export const AppointmentPage = () => {
 
     const handleMakeAppointment = () => {
         tg.showAlert('Вы успешно записались на консультацию!')
+        handleGetBack()
     }
 
     return (
