@@ -32,7 +32,7 @@ export const LogoText = styled.h2`
   font-family: 'League Spartan', sans-serif;
   position: absolute;
   font-size: ${rem(70)};
-  top: 23.5%;
+  top: 22%;
   right: 0;
   color: var(--color-text)
 `
